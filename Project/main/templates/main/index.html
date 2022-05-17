@@ -1,0 +1,41 @@
+{% extends "main/layout.html" %}
+
+{% block title %}
+    MCI Students
+{% endblock %}
+
+{% block body %}
+
+<div class = "p-3">
+  {% if classes %}
+    <br>
+    <h1>Your Classes</h1>
+    <br>
+    <hr>
+
+    {% for class in classes %}
+    <br>
+    <!--  <a href="">{{ class.name }}</a>  -->
+    <div class="card">
+        <div class="card-header">
+          Period {{ class.period }}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ class.name }}</h5>
+          <p class="card-text">Teacher: {{ class.teacher }}</p>
+          <a href="{% url 'classroom' class.id %}" class="btn btn-outline-success">See class info</a>
+        </div>
+      </div>
+      <br>
+      <hr>
+    {% endfor %}
+
+    {% else %}
+
+    <img src="https://img.freepik.com/free-vector/man-is-sitting-cross-legged-with-laptop-laptop-with-open-website-page-vector-flat-illustration_531064-935.jpg?w=2000", style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+    <div style="text-align: center;">
+      <h1>Looks like you are not enrolled in any class</h1>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

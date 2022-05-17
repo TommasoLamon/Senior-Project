@@ -1,0 +1,27 @@
+{% extends "main/layout.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+Login Here
+{% endblock %}
+
+{% block body %}
+<div class="p-3">
+<h1>Log into your profile</h1>
+<br>
+{% if message %}
+<div class="alert alert-success" role="alert">
+    {{ message }}
+</div>
+{% endif %}
+<br>
+<form method="post" class="form-group" autocomplete="off">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <button type="submit" class="btn btn-success">Log in</button>
+</form>
+
+<p>Dont have an Account? Create one <a href="/register">Here</a></p>
+</div>
+{% endblock %}

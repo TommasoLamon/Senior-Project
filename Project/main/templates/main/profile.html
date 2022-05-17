@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block body %}
+<div style="padding: 20px;">
+    <div class="card" style="width: 100%;">
+        <div class="card-body">
+          <h5 class="card-title">{{ user.username }}</h5>
+          <ul>
+              <li>First: {{ user.first_name }}</li>
+              <li>Last: {{ user.last_name }}</li>
+              <li>E-mail: {{ user.email }}</li>
+              <li>Grade: {{ user.grade }}</li>
+          </ul>
+          <p class="card-text">
+              <a href="{% url 'edit' %}">Edit your Profile</a>
+          </p>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Edit Profile
+{% endblock %}
+
+{% block body %}
+
+<div class="p-3">
+    <h2>Edit your profile</h2>
+    <br>
+    <form method="post" class="form-group" autocomplete="off">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <button type="submit" class="btn btn-outline-success">Update</button>
+    </form>
+</div>
+
+{% endblock %}
