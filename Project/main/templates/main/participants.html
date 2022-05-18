@@ -17,7 +17,7 @@ List of Participants
         </ul>
       </div>
 </div>
-    {% for friend in friends %}
-
-    {% endfor %}
+<div class="p-3">
+    <a href="{% url 'classroom' class.id %}">Go back to {{ class.name }}</a>
+</div>
 {% endblock %}

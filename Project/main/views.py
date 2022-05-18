@@ -94,7 +94,8 @@ def friends(request, class_id):
     student_list = class_var.students.all()
 
     context = {
-        'friends': student_list
+        'friends': student_list,
+        'class': class_var
     }
 
     return render(request, "main/participants.html", context)
